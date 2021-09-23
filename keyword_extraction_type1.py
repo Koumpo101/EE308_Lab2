@@ -5,10 +5,10 @@ table=["auto","break","case","char","const","continue","default","do","double","
 def get_key(infile):
     global count
     count = 0
-    for line in infile.readlines():    # 对每行元素操作
-        line = line.strip()         # 将每行字符串的头尾空行符去除
+    for line in infile.readlines():    # operate for each line
+        line = line.strip()         # remove the whitespace before and behind the string
         line = line.replace(",", " ").replace(".", " ").replace("{", " ").replace("}", " ").replace(":", " ").replace(";", " ").replace("?", " ").replace("(", " ").replace(")", " ").replace("!", " ").replace(">"," ").replace("<", " ").replace("=", " ")
-        words = line.split()    # 将每行按空格划分为单词，做成单词列表
+        words = line.split()    # split the specific line as many words by the whitespace between them
         for word in words:
             for keyword in table:
                 if word == keyword:
@@ -23,10 +23,10 @@ def get_switch(infile):
     count_3 = 0
     flag=0
     cable = []
-    for line in infile.readlines():  # 对每行元素操作
-        line = line.strip()  # 将每行字符串的头尾空行符去除
+    for line in infile.readlines():  # operate for each line
+        line = line.strip()  # remove the whitespace before and behind the string
         line = line.replace(",", " ").replace(".", " ").replace("{", " ").replace("}", " ").replace(":", " ").replace(";", " ").replace("?", " ").replace("(", " ").replace(")", " ").replace("!", " ").replace(">", " ").replace("<", " ").replace("=", " ")
-        words = line.split()  # 将每行按空格划分为单词，做成单词列表
+        words = line.split()  # split the specific line as many words by the whitespace between them
         for word in words:
             if word == "switch":
                 count_2 = count_2+1
